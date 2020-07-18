@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="top">
+        <h5>Covid Tracker </h5>
+        <!-- <span>
+            <p>State </p><div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">
+                    {{selectedCity}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <button ngbDropdownItem (click)="onChangeCity('Delhi')">Delhi</button>
+                    <button ngbDropdownItem (click)="onChangeCity('Mumbai')">Mumbai</button>
+                </div>
+            </div>
+        </span> -->
+    </div>
+
+    <div class="status text-center">
+        <span> Active Cases: <span style="color: orange">{{activeCases}} </span></span>&nbsp;&nbsp;
+        <span> Confimed Cases: <span style="color: red">{{confirmedCases}}</span> </span> 
+    </div>
+
+    <div style="display: block;">
+        <canvas baseChart 
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType">
+        </canvas>
+    </div>
+</div>
